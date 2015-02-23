@@ -24,5 +24,5 @@ for annotation_file = annotation_files'
     [mask, class, maskpol, classpol] = LMobjectmask(annotation, DATAFOLDER);
     
     [pathstr, name, ext] = fileparts(annotation_file.name); 
-    imwrite(mask, sprintf('%s/%s/%s.png', DATAFOLDER, MASKSFOLDER, name));
+    csvwrite(sprintf('%s/%s/%s.csv', DATAFOLDER, MASKSFOLDER, name), mask);
 end;
